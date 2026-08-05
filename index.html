@@ -181,7 +181,7 @@
     .chsub { margin-bottom:.7rem; }
     .arrowline { line-height:1.75; margin-bottom:.8rem; }
     .chapter h3 { font-size:15pt; }
-    figure svg { max-height:72mm; }
+    figure svg { max-height:68mm; }
     .kpi { gap:.7rem 1.4rem; margin-bottom:.8rem;
            grid-template-columns:repeat(3,1fr);
            break-inside:avoid; page-break-inside:avoid; }
@@ -1457,6 +1457,58 @@
   <blockquote>
     단순 작업 로그가 아니라 "왜 그렇게 판단했는가"를 남기는 게 목적.
     <cite>작업 기록 문서 서문 중</cite>
+  </blockquote>
+
+  <h3 style="font-size:1.15rem;margin:2rem 0 .6rem;">알아낸 것을 조직에 옮깁니다</h3>
+  <p>
+    혼자 알고 있으면 그 판단은 제가 자리를 비우는 순간 사라집니다.
+    사내 공식 교육 과정에 강사로 배정돼 두 과정을 <strong>직접 설계하고 강의</strong>했습니다.
+  </p>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>과정</th><th>분량</th><th>구성</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LLM · RAG 기반 AI 활용</td>
+          <td class="num">3일 27시간</td>
+          <td>슬라이드 155장 · <strong>실습 14회</strong>를 이론과 교차 배치</td>
+        </tr>
+        <tr>
+          <td>AI 트렌드 및 사내 솔루션 이해</td>
+          <td class="num">2시간</td>
+          <td>슬라이드 94장 · 기술 동향 · 사내 적용 사례 · <strong>기술 선택 기준</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    커리큘럼을 <strong>"무엇을 할 수 있다"가 아니라 "무엇이 안 되는가"로 짰습니다.</strong>
+  </p>
+  <p class="arrowline">
+    프롬프트의 한계 → <b>RAG</b> → Naïve RAG의 한계 → <b>Function Calling</b><br>
+    → 그 한계 → <b>멀티 도구 에이전트</b> → <b>AI Agent</b>
+  </p>
+  <p>
+    앞 단계에서 막히는 지점이 다음 단계의 이유가 되게 했습니다. 이 문서의 구조와 같습니다.
+    마지막 장은 기술 설명이 아니라 <strong>판단 기준</strong>이었습니다 — 상용이냐 온프레미스냐,
+    어시스턴트냐 에이전트냐를 사업 요구사항별로 표로 정리했습니다.
+    5·6장에서 제가 세운 기준을 조직이 꺼내 쓸 수 있는 형태로 옮긴 것입니다.
+  </p>
+
+  <dl class="kpi">
+    <div class="hero"><dt>기대충족도</dt><dd>전원 매우 만족<small>두 과정 · 응답 5명 / 8명</small></dd></div>
+    <div><dt>만족도</dt><dd>7 / 8명<small>LLM·RAG 과정 "매우 만족"</small></dd></div>
+    <div><dt>업무적용도</dt><dd>7 / 8명<small>LLM·RAG 과정 "매우 도움"</small></dd></div>
+  </dl>
+  <p class="kpisrc">
+    사내 교육 만족도 설문 원자료 기준. 정원 20명 대비 응답 5~9명이라 비율보다 응답 인원을 함께 적었습니다.
+  </p>
+
+  <blockquote>
+    LLM / RAG / Agent의 차이 및 특징을 확실히 구분할 수 있게 되었습니다.
+    <cite>수강 후 설문 중</cite>
   </blockquote>
 
   <h3 style="font-size:1.15rem;margin:2rem 0 .6rem;">팀과 함께 일합니다</h3>
