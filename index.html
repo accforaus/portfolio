@@ -181,7 +181,7 @@
     .chsub { margin-bottom:.7rem; }
     .arrowline { line-height:1.75; margin-bottom:.8rem; }
     .chapter h3 { font-size:15pt; }
-    figure svg { max-height:68mm; }
+    figure svg { max-height:64mm; }
     .kpi { gap:.7rem 1.4rem; margin-bottom:.8rem;
            grid-template-columns:repeat(3,1fr);
            break-inside:avoid; page-break-inside:avoid; }
@@ -190,13 +190,13 @@
     .kpi .muted dd { font-size:9.4pt; }
     .kpi dd small { font-size:7.2pt; }
     .kpisrc { margin-top:-.25rem; margin-bottom:.7rem; font-size:7.6pt; }
-    .note { margin-top:.9rem; }
+    .note { margin-top:.5rem; }
     /* 마지막 두 절(기술 스택 · 다음 문제)을 같은 페이지로 모은다.
        안 그러면 닫는 절만 마지막 장에 홀로 남는다. */
     /* .closing 강제 넘김은 쓰지 않음 */
     .tablewrap { margin:.55rem 0 .6rem; }
     th,td { padding:.34rem .8rem .34rem 0; }
-    .note { padding-top:.8rem; }
+    .note { padding-top:.55rem; }
     h2 { margin-bottom:.8rem; padding-bottom:.35rem; }
   }
   @media print { .webonly { display:none; } }
@@ -1462,7 +1462,9 @@
   <h3 style="font-size:1.15rem;margin:2rem 0 .6rem;">알아낸 것을 조직에 옮깁니다</h3>
   <p>
     혼자 알고 있으면 그 판단은 제가 자리를 비우는 순간 사라집니다.
-    사내 공식 교육 과정에 강사로 배정돼 두 과정을 <strong>직접 설계하고 강의</strong>했습니다.
+    2026년 사내 재직자 교육 <strong>21개 과정 중 AI 과정 2개</strong>에 강사로 배정돼
+    커리큘럼부터 교재까지 <strong>직접 설계하고 강의</strong>했습니다.
+    강사진은 대부분 부장·수석부장·임원 직급이었고, 저는 대리였습니다.
   </p>
 
   <div class="tablewrap">
@@ -1498,14 +1500,15 @@
   </p>
 
   <dl class="kpi">
-    <div class="hero"><dt>기대충족도</dt><dd>전원 매우 만족<small>두 과정 · 응답 5명 / 8명</small></dd></div>
-    <div><dt>만족도</dt><dd>7 / 8명<small>LLM·RAG 과정 "매우 만족"</small></dd></div>
-    <div><dt>업무적용도</dt><dd>7 / 8명<small>LLM·RAG 과정 "매우 도움"</small></dd></div>
+    <div class="hero"><dt>담당 과정</dt><dd>2 / 21<small>사내 전 과정 중 AI 과정 전부</small></dd></div>
+    <div class="hero"><dt>교육 시간</dt><dd>27시간<small>21개 과정 중 최장 · 3일 연속</small></dd></div>
+    <div><dt>제작 슬라이드</dt><dd>249장<small>두 과정 합계 · 전량 직접 제작</small></dd></div>
+    <div class="muted"><dt>실습</dt><dd>14회<small>이론과 교차 배치</small></dd></div>
   </dl>
-  <p class="kpisrc">
-    사내 교육 만족도 설문 원자료 기준. 정원 20명 대비 응답 5~9명이라 비율보다 응답 인원을 함께 적었습니다.
-  </p>
 
+  <p>
+    수강 후 설문에서 두 과정 모두 <strong>기대충족도는 응답자 전원이 "매우 만족"</strong>이었습니다.
+  </p>
   <blockquote>
     LLM / RAG / Agent의 차이 및 특징을 확실히 구분할 수 있게 되었습니다.
     <cite>수강 후 설문 중</cite>
