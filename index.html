@@ -194,7 +194,7 @@
     /* 마지막 두 절(기술 스택 · 다음 문제)을 같은 페이지로 모은다.
        안 그러면 닫는 절만 마지막 장에 홀로 남는다. */
     /* 마지막 세 절(현재·다음·스택)을 한 덩어리로 넘겨 꼬리 페이지를 없앤다 */
-    .closing { break-before:page; page-break-before:always; }
+    /* .closing 강제 넘김 해제 */
     .tablewrap { margin:.55rem 0 .6rem; }
     th,td { padding:.28rem .8rem .28rem 0; }
     .note { padding-top:.55rem; }
@@ -894,7 +894,7 @@
   <article class="chapter">
     <span class="chnum">Chapter 4</span>
     <h3>사람들이 쓰게 만들었다</h3>
-    <p class="chsub">사내 챗봇 · 2025 – 현재 · 발의 · 설계 · 구현 · 리드<span class="self">스스로 정의한 문제</span><span class="cat">AI SERVICE</span></p>
+    <p class="chsub">사내 AX 워크스페이스 · 2025 – 현재 · 발의 · 설계 · 구현 · 리드<span class="self">스스로 정의한 문제</span><span class="cat">AI SERVICE</span></p>
 
     <div class="block">
       <p class="blabel">문제</p>
@@ -1027,8 +1027,20 @@
       <p class="blabel">구현</p>
       <p class="arrowline">
         필요한 데이터 범위·사용 목적·통제 방식 정리 → <b>사용 승인 확보</b><br>
-        → 확보한 자원 기준으로 검색·권한·모델 호출 아키텍처 설계<br>
-        → <b>그룹웨어 · 메일 · 전자결재 연동</b>과 답변 근거 인용까지 직접 구현
+        → 그룹웨어에 <b>사용자별 위임 인증</b>을 붙여 각자 자기 권한으로만 읽고 쓰게 함<br>
+        → 메일 · 전자결재 · 휴가 · 주소록을 도구로 편입<br>
+        → 사내 기간계 <b>12종</b>(회의실 · 공수 · 사업 · 좌석 · 근태)까지 확장
+      </p>
+      <p>
+        만들고 보니 대화창이 아니라 <strong>업무 환경</strong>이 됐습니다. 메일을 읽고 답장을 쓰고,
+        결재를 조회해 승인·반려하고, 휴가를 신청하는 일이 한 화면에서 끝납니다.
+        조회 결과는 대화 기록에 흘려보내지 않고 <strong>작업 화면으로 띄웠습니다</strong> —
+        도메인마다 화면을 새로 만들지 않도록 껍데기는 도메인을 모르게 두고 렌더러만 갈아 끼웁니다.
+      </p>
+      <p>
+        <strong>읽기만 붙이면 안전하지만 쓸모가 없고, 쓰기를 붙이면 잘못 눌렀을 때 되돌릴 수 없습니다.</strong>
+        그래서 쓰기는 전부 사람이 최종 내용을 확인하고 고친 뒤에 나가게 했습니다.
+        메일 발송, 결재 상신, 휴가 신청 모두 같은 규칙입니다.
       </p>
     </div>
 
@@ -1036,12 +1048,13 @@
       <p class="blabel">결과</p>
       <dl class="kpi">
         <div class="hero"><dt>승인 데이터 소스</dt><dd>60+<small>그룹웨어 · 문서 · 메일</small></dd></div>
+        <div class="hero"><dt>기간계 도구</dt><dd>12종<small>회의실 · 공수 · 사업 · 좌석 · 근태</small></dd></div>
         <div><dt>사용 범위</dt><dd>전사<small>프로덕션 운영 중</small></dd></div>
-        <div><dt>역할</dt><dd>발의 → 구현<small>기획 상신 · 승인 확보 · 직접 구현</small></dd></div>
+        <div class="muted"><dt>역할</dt><dd>발의 → 구현<small>승인 확보 · 코드베이스 전량 직접</small></dd></div>
       </dl>
       <p>
-        단순 질의응답이 아니라 내부 자원을 통합 활용하는 업무 지원 AI로 발전했고
-        현재 프로덕션 운영 중입니다.
+        질의응답으로 시작해 <strong>사내 업무를 실제로 처리하는 환경</strong>이 됐고 전사 운영 중입니다.
+        현재 운영 코드베이스는 전량 제가 작성했습니다.
       </p>
       <blockquote>
         기획 단계부터 설계, PoC, 고도화까지 전 과정을 총괄했다.
@@ -1464,6 +1477,22 @@
     단순 작업 로그가 아니라 "왜 그렇게 판단했는가"를 남기는 게 목적.
     <cite>작업 기록 문서 서문 중</cite>
   </blockquote>
+
+  <h3 style="font-size:1.15rem;margin:2rem 0 .6rem;">화면이 데이터를 속이지 않게 합니다</h3>
+  <p>
+    목록에 10건이 보이면 사람은 그게 전부라고 믿습니다. 실제로는 첫 페이지만 가져온 것일 수 있습니다.
+    사내 업무 도구를 만들면서 이런 것들을 버그가 아니라 <strong>기능 요구사항</strong>으로 잡았습니다.
+  </p>
+  <ul>
+    <li>목록에는 <strong>총 건수와 조회·정렬 범위</strong>를 함께 표시한다</li>
+    <li>폴더·상태 같은 분류는 화면이 추측하지 않고 <strong>서버가 준 값만</strong> 쓴다</li>
+    <li>AI 요약에는 어느 원문에서 온 값인지 <strong>출처를 붙이고</strong>, 근거 없는 문장은 지운다</li>
+    <li><strong>중간에 멈춘 것을 "완료"로 표시하지 않는다</strong></li>
+  </ul>
+  <p>
+    마지막이 제일 자주 어겨집니다. <strong>멈춘 것과 끝난 것은 다른데 화면에서는 같아 보입니다.</strong>
+    앞 장들에서 측정을 붙여 온 이유와 같습니다 — 숫자가 무엇을 뜻하는지 흐려지면 그 다음 판단이 전부 틀어집니다.
+  </p>
 
   <h3 style="font-size:1.15rem;margin:2rem 0 .6rem;">알아낸 것을 조직에 옮깁니다</h3>
   <p>
