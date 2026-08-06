@@ -1256,13 +1256,14 @@
   <article class="chapter">
     <span class="chnum">Chapter 6</span>
     <h3>안정적으로 운영했다</h3>
-    <p class="chsub">전사 모델 서빙 환경 · 2026.06 – 현재 · 설계·운영<span class="self">스스로 정의한 문제</span><span class="cat">INFRA</span></p>
+    <p class="chsub">사내 LLM API 플랫폼 · 2026.06 – 현재 · 설계·운영<span class="self">스스로 정의한 문제</span><span class="cat">INFRA</span></p>
 
     <div class="block">
       <p class="blabel">문제</p>
       <p>
-        팀마다 모델을 띄우려 했지만 GPU는 한정돼 있었습니다. 외부 GPU를 2년 계약으로
-        임차했는데, 사내 장비와 어떻게 나눠 쓸지 <strong>아무 기준이 없었습니다.</strong>
+        팀마다 모델을 띄우려 했지만 GPU는 한정돼 있었고, 같은 모델을 여러 팀이 중복해
+        올리고 있었습니다. 외부 GPU를 2년 계약으로 임차했는데도 사내 장비와 어떻게 나눠 쓸지
+        <strong>아무 기준이 없었습니다.</strong>
       </p>
     </div>
 
@@ -1270,7 +1271,9 @@
       <p class="blabel judge">판단</p>
       <div class="judgebox">
         <p>
-          "무엇을 어디에 올릴 것인가"는 <strong>측정 없이 정할 수 없는 문제</strong>라고 봤습니다.
+          팀마다 환경을 만들게 두는 대신, <strong>상용 API처럼 키 하나로 여러 모델을 부르는
+          사내 공용 API</strong>를 만들기로 했습니다. 그러려면 흩어진 GPU를 한 자원 풀로 묶어야 하고,
+          <strong>무엇을 어디에 올릴지는 측정 없이 정할 수 없는 문제</strong>가 됩니다.
           감으로 배치하면 나중에 근거를 댈 수 없습니다.
         </p>
         <p>
