@@ -272,69 +272,28 @@
 </section>
 
 <section>
-  <h2>성장 곡선</h2>
+  <h2>다루는 단위와 실제 기간</h2>
 
   <figure>
-    <svg viewBox="0 0 660 210" role="img"
-         aria-label="2023년 데이터에서 시작해 지식, 행동, 사람, 재사용, 운영으로 다루는 단위가 커진 6단계 성장 과정">
-      <defs>
-        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5"
-                markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <polygon points="0,1 9,5 0,9" fill="currentColor"/>
-        </marker>
-      </defs>
-      <line x1="10" y1="176" x2="650" y2="176" stroke="currentColor"
-            stroke-width="1" opacity=".25"/>
-      <text x="10" y="196" font-family="ui-monospace, Menlo, monospace" font-size="10.5"
-            fill="currentColor" opacity=".55">2023 → 현재 · 순서는 시간순이 아니라 다루는 단위 순</text>
-      <polyline points="30,158 135,140 240,122 345,100 450,74 555,44"
-                fill="none" stroke="var(--brass)" stroke-width="2" marker-end="url(#a)"/>
-      <g fill="var(--brass)">
-        <circle cx="30" cy="158" r="4"/><circle cx="135" cy="140" r="4"/>
-        <circle cx="240" cy="122" r="4"/><circle cx="345" cy="100" r="4"/>
-        <circle cx="450" cy="74" r="4"/><circle cx="555" cy="44" r="4"/>
-      </g>
-      <g font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif"
-         font-size="12.5" fill="currentColor" font-weight="700">
-        <text x="30"  y="148">데이터</text>
-        <text x="135" y="130">지식</text>
-        <text x="240" y="112">행동</text>
-        <text x="345" y="90">사람</text>
-        <text x="450" y="64">재사용</text>
-        <text x="555" y="34">운영</text>
-      </g>
-      <g font-family="ui-monospace, Menlo, monospace" font-size="10"
-         fill="currentColor" opacity=".55">
-        <text x="30"  y="172">OCR</text>
-        <text x="135" y="172">RAG</text>
-        <text x="240" y="172">Agent</text>
-        <text x="345" y="172">Chatbot</text>
-        <text x="450" y="172">Platform</text>
-        <text x="555" y="172">Serving</text>
-      </g>
-      <!-- 두 번째 축: 다루는 계층이 함께 내려갔다 (모델 → 그 모델을 떠받치는 것) -->
-      <g stroke="currentColor" stroke-width="1" opacity=".3" fill="none">
-        <rect x="10"  y="206" width="90"  height="19"/>
-        <rect x="104" y="206" width="316" height="19"/>
-        <rect x="424" y="206" width="96"  height="19"/>
-        <rect x="524" y="206" width="126" height="19" stroke="var(--brass)" opacity="1"/>
-      </g>
-      <g font-family="ui-monospace, Menlo, monospace" font-size="9.5"
-         fill="currentColor" opacity=".65" text-anchor="middle" letter-spacing="1">
-        <text x="55"  y="219">AI MODEL</text>
-        <text x="262" y="219">AI SERVICE</text>
-        <text x="472" y="219">PLATFORM</text>
-        <text x="587" y="219" fill="var(--brass)" opacity="1" font-weight="700">INFRA</text>
-      </g>
+    <svg viewBox="0 0 660 236" role="img"
+         aria-label="여섯 장의 실제 수행 기간을 가로 막대로 표시한 도표. 위로 갈수록 다루는 단위가 크고, 2025년부터 여러 층위가 동시에 진행됨">
+      <line x1="96.0" y1="34" x2="96.0" y2="202" stroke="currentColor" stroke-width="1" opacity=".12"/><text x="96.0" y="218" font-size="10" fill="currentColor" opacity=".6" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">2023</text><line x1="234.5" y1="34" x2="234.5" y2="202" stroke="currentColor" stroke-width="1" opacity=".12"/><text x="234.5" y="218" font-size="10" fill="currentColor" opacity=".6" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">2024</text><line x1="373.0" y1="34" x2="373.0" y2="202" stroke="currentColor" stroke-width="1" opacity=".12"/><text x="373.0" y="218" font-size="10" fill="currentColor" opacity=".6" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">2025</text><line x1="511.5" y1="34" x2="511.5" y2="202" stroke="currentColor" stroke-width="1" opacity=".12"/><text x="511.5" y="218" font-size="10" fill="currentColor" opacity=".6" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">2026</text>
+      <line x1="592.3" y1="34" x2="592.3" y2="202" stroke="var(--brass)" stroke-width="1" stroke-dasharray="3 3" opacity=".7"/>
+      <text x="592.3" y="30" font-size="9.5" fill="var(--brass)" text-anchor="middle"
+            font-family="ui-monospace, Menlo, monospace">현재</text>
+      <rect x="384.5" y="40" width="207.8" height="13" rx="2" fill="var(--brass)" opacity="1"/><rect x="465.3" y="68" width="127.0" height="13" rx="2" fill="var(--brass)" opacity="1"/><rect x="407.6" y="96" width="184.7" height="13" rx="2" fill="var(--brass)" opacity="1"/><rect x="500.0" y="124" width="46.1" height="13" rx="2" fill="currentColor" opacity=".45"/><rect x="361.5" y="152" width="80.7" height="13" rx="2" fill="currentColor" opacity=".45"/><rect x="142.2" y="180" width="173.1" height="13" rx="2" fill="currentColor" opacity=".45"/>
+      <text x="88" y="50" text-anchor="end" font-size="10.5" fill="currentColor" font-family="ui-monospace, Menlo, monospace">6장 · 운영</text><text x="388.5" y="36" font-size="9.5" fill="currentColor" opacity=".75" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">사내 LLM API 플랫폼</text><text x="88" y="78" text-anchor="end" font-size="10.5" fill="currentColor" font-family="ui-monospace, Menlo, monospace">5장 · 재사용</text><text x="469.3" y="64" font-size="9.5" fill="currentColor" opacity=".75" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">사내 AI 플랫폼</text><text x="88" y="106" text-anchor="end" font-size="10.5" fill="currentColor" font-family="ui-monospace, Menlo, monospace">4장 · 사람</text><text x="411.6" y="92" font-size="9.5" fill="currentColor" opacity=".75" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">AX 워크스페이스</text><text x="88" y="134" text-anchor="end" font-size="10.5" fill="currentColor" font-family="ui-monospace, Menlo, monospace">3장 · 행동</text><text x="504.0" y="120" font-size="9.5" fill="currentColor" opacity=".75" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">도메인 에이전트</text><text x="88" y="162" text-anchor="end" font-size="10.5" fill="currentColor" font-family="ui-monospace, Menlo, monospace">2장 · 지식</text><text x="365.5" y="148" font-size="9.5" fill="currentColor" opacity=".75" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">RAG 서비스</text><text x="88" y="190" text-anchor="end" font-size="10.5" fill="currentColor" font-family="ui-monospace, Menlo, monospace">1장 · 데이터</text><text x="146.2" y="176" font-size="9.5" fill="currentColor" opacity=".75" font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif">고문서 OCR</text>
+      <line x1="88" y1="202" x2="650" y2="202" stroke="currentColor" stroke-width="1" opacity=".25"/>
+      <text x="0" y="30" font-size="9.5" fill="currentColor" opacity=".55"
+            font-family="ui-monospace, Menlo, monospace">↑ 다루는 단위</text>
     </svg>
     <figcaption>
-      위쪽 축은 다루는 <b>대상</b>이 커진 순서, 아래쪽 띠는 다루는 <b>계층</b>입니다.
-      모델을 만들다가, 그 모델을 쓰는 서비스를, 다시 그 서비스들을 떠받치는 기반을 맡게 됐습니다.
-      <b>가로축은 시간이 아닙니다.</b> 실제 시기는 겹칩니다 — 앞 단계를 운영하면서 다음 단계를 시작했고,
-      여섯 개 중 셋은 지금도 돌아갑니다.
+      가로는 <b>실제 기간</b>, 세로는 <b>다루는 단위</b>입니다 — 위로 갈수록 큽니다.
+      2023–2024는 모델 하나였고, <b>2025년부터는 서비스와 기반을 동시에 세웠습니다.</b>
+      여섯 중 셋은 지금도 돌아갑니다. 아래 여섯 장은 시간순이 아니라
+      <b>단위가 커진 순서</b>로 배열했습니다 — 각 장의 배운 점이 다음 장의 문제로 이어지기 때문입니다.
     </figcaption>
   </figure>
-
 </section>
 
 <section>
@@ -572,9 +531,10 @@
     <div class="block">
       <p class="blabel">문제</p>
       <p>
-        회사의 <strong>첫 LLM 서비스</strong>였습니다. 단순 챗봇이 아니라 비정형 문서(PDF),
-        정형 데이터(DB), 공간 데이터가 함께 결합된 형태가 요구됐습니다.
-        문서는 길고 형식이 제각각이었습니다.
+        앞서 사내에 생성형 AI를 들여 쓰고 있었지만 상용 모델을 그대로 부르는 수준이었습니다.
+        <strong>회사 데이터와 결합한 LLM 서비스는 이것이 처음</strong>이었습니다.
+        단순 챗봇이 아니라 비정형 문서(PDF), 정형 데이터(DB), 공간 데이터가 함께 결합된 형태가
+        요구됐고, 문서는 길고 형식이 제각각이었습니다.
       </p>
     </div>
 
