@@ -1626,10 +1626,50 @@
   <div class="tablewrap">
     <table>
       <tbody>
-        <tr><td>모델 · 데이터</td><td>PyTorch · 탐지/인식 모델 튜닝 · 데이터 증강 생성 모델 · 데이터셋 구축·레이블링</td></tr>
-        <tr><td>LLM · 에이전트</td><td>LangChain · LangGraph · Advanced RAG · Tool Calling · 프롬프트 전략</td></tr>
-        <tr><td>백엔드 · 플랫폼</td><td>Python · TypeScript · FastAPI · OIDC · Traefik · Clean Architecture + DDD<br>PostgreSQL · PostGIS · Vector DB · Redis</td></tr>
-        <tr><td>서빙 · 운영</td><td>vLLM · LiteLLM · 관측/트레이싱 · GPU 자원 배분 · Docker · CI/CD</td></tr>
+        <tr>
+          <td>모델 · 학습</td>
+          <td>PyTorch · 텍스트 <strong>탐지/인식 모델 튜닝</strong>(DBNet · DBNet++ / ABINet · ABINet++, MMOCR) ·
+              <strong>데이터 증강용 생성 모델 학습</strong> · 이미지 복원 모델 ·
+              시계열 이동시간 예측(Geo-Conv + LSTM 계열) ·
+              <strong>QLoRA 파인튜닝</strong> · 합성 데이터셋 생성 · 모델 비교 평가 및 선정</td>
+        </tr>
+        <tr>
+          <td>데이터</td>
+          <td>데이터셋 구축 · 레이블링 · 전처리 파이프라인 · <strong>클래스 분포 분석</strong> ·
+              희소 클래스 보강 · 코퍼스 품질 게이트 · 비식별화 · 평가셋 설계</td>
+        </tr>
+        <tr>
+          <td>LLM 서빙 · 운영</td>
+          <td><strong>vLLM</strong> 다중 모델 서빙 · <strong>LiteLLM</strong> 게이트웨이(라우팅 · 쿼터 · rate limit) ·
+              Langfuse 관측 · <strong>KV 캐시 · GPU 메모리 튜닝</strong> ·
+              오픈 LLM 다종(Qwen3 · EXAONE · Gemma · GPT-OSS 계열) 온프레미스 서빙 ·
+              상용/온프레미스 선택 기준 수립</td>
+        </tr>
+        <tr>
+          <td>RAG · 검색</td>
+          <td><strong>하이브리드 검색</strong>(BM25 + 벡터) · RRF · <strong>재순위</strong>(cross-encoder) ·
+              HyDE · Multi-Query · <strong>Graph RAG</strong> · 청킹 전략 · 임베딩 모델 비교 평가 ·
+              Milvus · pgvector · Qdrant · FAISS ·
+              <strong>4축 평가</strong>(Context Relevance · Groundedness · Answer Relevance · Correctness)</td>
+        </tr>
+        <tr>
+          <td>에이전트</td>
+          <td><strong>LangGraph</strong>(StateGraph · checkpointer · interrupt) · LangChain ·
+              <strong>MCP 도구 서버 구축</strong> · Tool / Function Calling ·
+              구조화 출력(JSON Schema) · <strong>멀티 에이전트 오케스트레이션</strong> ·
+              <strong>HITL 승인 게이트</strong> · 가드레일 · NL2SQL · 프롬프트 전략</td>
+        </tr>
+        <tr>
+          <td>백엔드 · 플랫폼</td>
+          <td>Python · TypeScript · FastAPI · SSE 스트리밍 · <strong>OIDC / OAuth2</strong> ·
+              JWKS · RS256 키 회전 · Traefik <strong>forwardAuth</strong> · oauth2-proxy ·
+              Clean Architecture 4계층 + DDD · 모노레포 · PostgreSQL · PostGIS · Redis · S3 / MinIO</td>
+        </tr>
+        <tr>
+          <td>인프라 · 검증</td>
+          <td>Docker · Docker Swarm · Kubernetes / Helm · blue-green 배포 · CI/CD · 재해복구 자동화 ·
+              pytest · vitest · <strong>Playwright e2e</strong> · 라이브 스모크 · 적대적 리뷰 게이트</td>
+        </tr>
       </tbody>
     </table>
   </div>
