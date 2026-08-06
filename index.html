@@ -272,7 +272,66 @@
 </section>
 
 <section>
-  <h2>다루는 단위와 실제 기간</h2>
+  <h2>성장 곡선과 실제 기간</h2>
+
+<figure>
+    <svg viewBox="0 0 660 232" role="img"
+         aria-label="2023년 데이터에서 시작해 지식, 행동, 사람, 재사용, 운영으로 다루는 단위가 커진 6단계 성장 과정">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5"
+                markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <polygon points="0,1 9,5 0,9" fill="currentColor"/>
+        </marker>
+      </defs>
+      <line x1="10" y1="176" x2="650" y2="176" stroke="currentColor"
+            stroke-width="1" opacity=".25"/>
+      
+      <polyline points="30,158 135,140 240,122 345,100 450,74 555,44"
+                fill="none" stroke="var(--brass)" stroke-width="2" marker-end="url(#a)"/>
+      <g fill="var(--brass)">
+        <circle cx="30" cy="158" r="4"/><circle cx="135" cy="140" r="4"/>
+        <circle cx="240" cy="122" r="4"/><circle cx="345" cy="100" r="4"/>
+        <circle cx="450" cy="74" r="4"/><circle cx="555" cy="44" r="4"/>
+      </g>
+      <g font-family="-apple-system, 'Apple SD Gothic Neo', sans-serif"
+         font-size="12.5" fill="currentColor" font-weight="700">
+        <text x="30"  y="148">데이터</text>
+        <text x="135" y="130">지식</text>
+        <text x="240" y="112">행동</text>
+        <text x="345" y="90">사람</text>
+        <text x="450" y="64">재사용</text>
+        <text x="555" y="34">운영</text>
+      </g>
+      <g font-family="ui-monospace, Menlo, monospace" font-size="10"
+         fill="currentColor" opacity=".55">
+        <text x="30"  y="172">OCR</text>
+        <text x="135" y="172">RAG</text>
+        <text x="240" y="172">Agent</text>
+        <text x="345" y="172">Chatbot</text>
+        <text x="450" y="172">Platform</text>
+        <text x="555" y="172">Serving</text>
+      </g>
+      <!-- 두 번째 축: 다루는 계층이 함께 내려갔다 (모델 → 그 모델을 떠받치는 것) -->
+      <g stroke="currentColor" stroke-width="1" opacity=".3" fill="none">
+        <rect x="10"  y="206" width="90"  height="19"/>
+        <rect x="104" y="206" width="316" height="19"/>
+        <rect x="424" y="206" width="96"  height="19"/>
+        <rect x="524" y="206" width="126" height="19" stroke="var(--brass)" opacity="1"/>
+      </g>
+      <g font-family="ui-monospace, Menlo, monospace" font-size="9.5"
+         fill="currentColor" opacity=".65" text-anchor="middle" letter-spacing="1">
+        <text x="55"  y="219">AI MODEL</text>
+        <text x="262" y="219">AI SERVICE</text>
+        <text x="472" y="219">PLATFORM</text>
+        <text x="587" y="219" fill="var(--brass)" opacity="1" font-weight="700">INFRA</text>
+      </g>
+    </svg>
+    <figcaption>
+      위쪽은 다루는 <b>대상</b>이 커진 순서, 아래쪽 띠는 다루는 <b>계층</b>입니다.
+      모델을 만들다가, 그 모델을 쓰는 서비스를, 다시 그 서비스들을 떠받치는 기반을 맡게 됐습니다.
+      <b>아래 여섯 장은 이 순서로 배열했습니다</b> — 각 장의 배운 점이 다음 장의 문제로 이어집니다.
+    </figcaption>
+  </figure>
 
   <figure>
     <svg viewBox="0 0 660 236" role="img"
@@ -290,8 +349,7 @@
     <figcaption>
       가로는 <b>실제 기간</b>, 세로는 <b>다루는 단위</b>입니다 — 위로 갈수록 큽니다.
       2023–2024는 모델 하나였고, <b>2025년부터는 서비스와 기반을 동시에 세웠습니다.</b>
-      여섯 중 셋은 지금도 돌아갑니다. 아래 여섯 장은 시간순이 아니라
-      <b>단위가 커진 순서</b>로 배열했습니다 — 각 장의 배운 점이 다음 장의 문제로 이어지기 때문입니다.
+      여섯 중 셋은 지금도 돌아갑니다. <b>장 순서는 위 곡선을 따르므로 시간순과 다릅니다.</b>
     </figcaption>
   </figure>
 </section>
