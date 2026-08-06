@@ -162,7 +162,7 @@
     .wrap { max-width:none; }
     .masthead { padding:0 0 1.2rem; }
     h1 { font-size:24pt; }
-    section { padding-top:.7rem; }
+    section { padding-top:.45rem; }
     h2,h3 { break-after:avoid; page-break-after:avoid; }
     /* 장마다 페이지를 강제로 끊으면(break-before:page) 각 장이 1.5페이지가 되면서
        매 장 반 페이지가 빈다. 흐르게 두고 블록 단위로만 쪼개지지 않게 막는다.
@@ -193,11 +193,12 @@
     .note { margin-top:.5rem; }
     /* 마지막 두 절(기술 스택 · 다음 문제)을 같은 페이지로 모은다.
        안 그러면 닫는 절만 마지막 장에 홀로 남는다. */
-    /* .closing 강제 넘김은 쓰지 않음 */
+    /* 마지막 세 절(현재·다음·스택)을 한 덩어리로 넘겨 꼬리 페이지를 없앤다 */
+    .closing { break-before:page; page-break-before:always; }
     .tablewrap { margin:.55rem 0 .6rem; }
-    th,td { padding:.34rem .8rem .34rem 0; }
+    th,td { padding:.28rem .8rem .28rem 0; }
     .note { padding-top:.55rem; }
-    h2 { margin-bottom:.8rem; padding-bottom:.35rem; }
+    h2 { margin-bottom:.65rem; padding-bottom:.3rem; }
   }
   @media print { .webonly { display:none; } }
 </style>
@@ -1213,6 +1214,7 @@
       <dl class="kpi">
         <div class="hero"><dt>수용 서비스</dt><dd>15개<small>게이트웨이 뒤에서 가동 중</small></dd></div>
         <div><dt>설계 판단 기록</dt><dd>349건<small>ADR · 설계문서</small></dd></div>
+        <div><dt>배포 범위</dt><dd>타 조직<small>다른 그룹·연구소로 확산</small></dd></div>
         <div class="muted"><dt>템플릿 파생</dt><dd>4+<small>공통 구조 재사용</small></dd></div>
         <div class="muted"><dt>리드 인원</dt><dd>7명<small>AI 파트 · 파트별 경계 합의</small></dd></div>
       </dl>
@@ -1526,26 +1528,48 @@
   </p>
 </section>
 
-<section class="closing">
-  <h2>기술 스택</h2>
+
+<section>
+  <h2>지금 하고 있는 것</h2>
   <p>
-    과제마다 필요한 기술은 달랐습니다. 아래는 여섯 장을 지나며 <strong>직접 쓰고 운영해 온</strong>
-    범위입니다.
+    앞의 여섯 장은 끝난 일이고, 아래는 진행 중입니다.
+    <strong>역할이 서로 다릅니다</strong> — 직접 구현한 것과 방향만 잡은 것을 구분해 적었습니다.
   </p>
+
   <div class="tablewrap">
     <table>
+      <thead><tr><th>과제</th><th>내용</th><th>내 역할</th></tr></thead>
       <tbody>
-        <tr><td>모델 · 데이터</td><td>PyTorch · 탐지/인식 모델 튜닝 · 데이터 증강 생성 모델 · 데이터셋 구축·레이블링</td></tr>
-        <tr><td>LLM · 에이전트</td><td>LangChain · LangGraph · Advanced RAG · Tool Calling · 프롬프트 전략</td></tr>
-        <tr><td>백엔드 · 플랫폼</td><td>Python · TypeScript · FastAPI · OIDC · Traefik · Clean Architecture + DDD</td></tr>
-        <tr><td>데이터 저장</td><td>PostgreSQL · PostGIS · Vector DB · Redis</td></tr>
-        <tr><td>서빙 · 운영</td><td>vLLM · LiteLLM · 관측/트레이싱 · GPU 자원 배분 · Docker · CI/CD</td></tr>
+        <tr>
+          <td><strong>플랫폼 외부 확산</strong></td>
+          <td>사내 다른 그룹·연구소로 배포, 공공 SI 사업 1건에 적용 중</td>
+          <td class="num">직접 구현</td>
+        </tr>
+        <tr>
+          <td><strong>보안약점 자동 진단 AI</strong></td>
+          <td>정적 분석·의미 검색·LLM 탐지를 병렬로 돌리고 오탐을 교차 검증해
+              공공 SI 진단 의무에 대응</td>
+          <td class="num">기획 · 설계 · 리드</td>
+        </tr>
+        <tr>
+          <td><strong>사내 코드 어시스턴트 모델</strong></td>
+          <td>외부 클라우드 도구를 쓸 수 없는 환경이라 온프레미스 자체 모델로.
+              사내 코드에서 합성 데이터셋을 만들어 파인튜닝</td>
+          <td class="num">기획 · 설계 · 데이터 준비 · 리드</td>
+        </tr>
       </tbody>
     </table>
   </div>
+
+  <p>
+    세 번째가 <strong>1장으로 돌아옵니다.</strong> 코드 어시스턴트도 결국
+    <strong>학습 데이터가 없는 문제</strong>였습니다. 사내 코드는 있지만 그대로는 학습 데이터가
+    아니어서, 무엇을 어떤 형태로 만들어야 모델이 배울 수 있는지부터 정해야 했습니다.
+    3년 전 고문서에서 208자를 만들어 넣던 것과 같은 문제입니다.
+  </p>
 </section>
 
-<section>
+<section class="closing">
   <h2>다음에 풀고 싶은 문제</h2>
   <p>
     여섯 장을 지나며 다루는 단위가 모델에서 기반으로 옮겨 왔습니다. 그런데 3장에서 세운
@@ -1558,6 +1582,21 @@
     <strong>여기까지가 제가 아직 답을 내지 못한 지점입니다.</strong>
     다음에는 이 문제를 검증 가능한 형태로 바꾸는 일부터 해보고 싶습니다.
   </p>
+</section>
+
+<section>
+  <h2>기술 스택</h2>
+  <p>여섯 장을 지나며 <strong>직접 쓰고 운영해 온</strong> 범위입니다.</p>
+  <div class="tablewrap">
+    <table>
+      <tbody>
+        <tr><td>모델 · 데이터</td><td>PyTorch · 탐지/인식 모델 튜닝 · 데이터 증강 생성 모델 · 데이터셋 구축·레이블링</td></tr>
+        <tr><td>LLM · 에이전트</td><td>LangChain · LangGraph · Advanced RAG · Tool Calling · 프롬프트 전략</td></tr>
+        <tr><td>백엔드 · 플랫폼</td><td>Python · TypeScript · FastAPI · OIDC · Traefik · Clean Architecture + DDD<br>PostgreSQL · PostGIS · Vector DB · Redis</td></tr>
+        <tr><td>서빙 · 운영</td><td>vLLM · LiteLLM · 관측/트레이싱 · GPU 자원 배분 · Docker · CI/CD</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <p class="note">
